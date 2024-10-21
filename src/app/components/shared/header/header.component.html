@@ -1,0 +1,10 @@
+<header class="devices-header">
+    <button class="toggle-sidebar-btn" (click)="toggleSidebar()">
+        &#9776;
+    </button>
+
+    <div class="dropdown-menu" *ngIf="dropDown">        
+        <button class="menu-btn" (click)="navigateToDashboard()">Vehicle dashboard</button>
+        <button class="menu-btn" (click)="navigateToDevices()">Devices</button>
+    </div>
+</header>

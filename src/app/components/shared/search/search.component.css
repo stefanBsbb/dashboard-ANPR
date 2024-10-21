@@ -1,0 +1,147 @@
+.search-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .dropdown {
+    position: absolute;
+    width: 100%;
+    list-style-type: decimal;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-top: none;
+    z-index: 10;
+    border-radius: 0 0 4px 4px;
+  }
+  
+  .suggestion-item {
+    padding: 10px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .suggestion-item:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .suggestion-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .suggestion-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+  }
+  
+  .device-name {
+    font-size: 16px;
+  }
+  
+  .device-status {
+    font-size: 14px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    color: white;
+  }
+  
+  .device-status.active {
+    background-color: green;
+  }
+  
+  .device-status.inactive {
+    background-color: red;
+  }
+  
+  .suggestion-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-top: 5px;
+    flex-wrap: wrap;
+  }
+  
+  .suggestion-details span {
+    margin-right: 10px;
+  }
+  
+  .no-results {
+    padding: 10px;
+    color: #777;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 1024px) and (min-width: 600px) {
+    .suggestion-content {
+      flex-direction: column;
+    }
+  
+    .suggestion-details {
+      flex-direction: column;
+      font-size: 14px;
+      align-items: flex-start;
+    }
+  
+    .device-name {
+      font-size: 18px;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .search-container {
+      max-width: 70%;
+    }
+  
+    .dropdown {
+      max-height: 250px;
+    }
+  
+    .suggestion-content {
+      flex-direction: column;
+    }
+  
+    .suggestion-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .device-name {
+      font-size: 16px;
+    }
+  
+    .device-status {
+      font-size: 12px;
+    }
+  
+    .suggestion-details {
+      flex-direction: column;
+      font-size: 12px;
+      align-items: flex-start;
+      margin-top: 8px;
+    }
+  
+    .suggestion-details span {
+      margin-bottom: 5px;
+    }
+  
+    input[type="text"] {
+      font-size: 14px;
+      padding: 8px;
+    }
+  }
+  

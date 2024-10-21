@@ -1,0 +1,31 @@
+<div class="search-container">
+    <input
+      type="text"
+      placeholder="Search devices..."
+      [formControl]="searchControl"
+      (blur)="hideDropdown()"
+      (focus)="showDropdown()"
+      (input)="onSearchChange()"
+    />
+  
+    <ul class="dropdown" *ngIf="showSuggestions">
+      <li *ngIf="suggestions.length === 0" class="no-results">No results</li>
+      <li *ngFor="let suggestion of suggestions" (click)="selectSuggestion(suggestion)" class="suggestion-item">
+        <div class="suggestion-content">
+          <div class="suggestion-header">
+            <span class="device-name">{{ suggestion.name }}</span>
+            <span class="device-status" [ngClass]="{'active': suggestion.status === 'active', 'inactive': suggestion.status === 'inactive'}">
+              {{ suggestion.status }}
+            </span>
+          </div>
+          <div class="suggestion-details">
+            <span class="device-model">Model: {{ suggestion.model }}</span>
+            <span class="device-serial">Serial: {{ suggestion.serialNumber }}</span>
+            <span class="device-ip">IP: {{ suggestion.ipAddress }}</span>
+            <span class="device-location">Location: {{ suggestion.location }}</span>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  

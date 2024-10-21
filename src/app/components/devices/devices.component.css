@@ -93,15 +93,25 @@ td button {
     font-weight: bold;
 }
 
-.form-group input,
-.form-group select {
-    width: 100%;
-    padding: 10px;
+.form-group input {
+    width: 95%;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-left: 10px;
     font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-
+.form-group select
+{
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 .btn,
 .btn-add {
     padding: 10px 20px;

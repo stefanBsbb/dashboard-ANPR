@@ -97,6 +97,7 @@ export class DevicesComponent implements OnInit {
   deleteDevice(id: number): void {
     this.deviceService.deleteDevice(id).subscribe(() => {
       this.loadDevices();
+      this.deleteConfirmOpen = false;
     });
   }
 

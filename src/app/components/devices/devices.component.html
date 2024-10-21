@@ -15,7 +15,7 @@
                     <th>Name</th>
                     <th>Model</th>
                     <th>Serial Number</th>
-                    <th>IP Address</th>
+                    <th class="ip-address">IP Address</th>
                     <th>Location</th>
                     <th>Status</th>
                     <th>Actions</th>
@@ -26,7 +26,7 @@
                     <td>{{ device.name }}</td>
                     <td>{{ device.model }}</td>
                     <td>{{ device.serialNumber }}</td>
-                    <td>{{ device.ipAddress }}</td>
+                    <td class="ip-address">{{ device.ipAddress }}</td>
                     <td>{{ device.location }}</td>
                     <td [ngClass]="{'status-active': device.status === 'active', 'status-inactive': device.status === 'inactive'}">
                         {{ device.status }}
@@ -51,6 +51,7 @@
             <select id="itemsPerPage" [(ngModel)]="itemsPerPage" (change)="onItemsPerPageChange()">
               <option value="5">5</option>
               <option value="10">10</option>
+              <option value="15">15</option>
               <option value="20">20</option>
             </select>
           </div>

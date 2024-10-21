@@ -130,6 +130,14 @@ td button {
     gap: 10px;
 }
 
+.sidebar-buttons button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
 .pagination-controls {
     display: flex;
     justify-content: center;
@@ -184,7 +192,9 @@ td button {
         grid-template-rows: auto 1fr auto auto;
         gap: 10px;
     }
-
+    .ip-address {
+        display: none;
+    }
     .toggle-sidebar-btn {
         display: block;
     }
@@ -340,7 +350,25 @@ td button {
 .btn-delete:hover {
     background-color: #c82333;
 }
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.btn-add {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
 
+.btn-add:hover {
+    background-color: #218838;
+}
 .error {
     color: red;
     font-size: 12px;

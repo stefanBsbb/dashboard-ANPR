@@ -34,6 +34,7 @@
 }
 
 .dashboard-main {
+    height:100%;
     grid-area: main;
     padding: 20px;
     background-color: #f8f9fa;

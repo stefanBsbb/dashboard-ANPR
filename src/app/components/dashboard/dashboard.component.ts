@@ -9,10 +9,10 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
   vehicles: any[] = [];
   paginatedVehicles: any[] = [];
-  itemsPerPage: number = 10;
+  itemsPerPage: number = 15;
   currentPage: number = 1;
   totalPages: number = 1;
-  pageSizeOptions: number[] = [5, 10, 20];
+  pageSizeOptions: number[] = [5, 10, 15, 20];
   showSidebar = false;
 
   constructor(

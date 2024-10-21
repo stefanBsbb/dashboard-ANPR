@@ -19,7 +19,7 @@ export class DevicesComponent implements OnInit {
   confirmedDeleteDeviceId: number | null = null;
   showSidebar = false;
   currentPage = 1;
-  itemsPerPage = 5;
+  itemsPerPage = 10;
   totalPages = 0; 
 
 

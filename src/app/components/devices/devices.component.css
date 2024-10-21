@@ -1,19 +1,27 @@
 .devices-container {
     display: grid;
-    grid-template-areas:
-        "sidebar main";
+    grid-template-areas: "sidebar main";
     grid-template-columns: 200px 1fr;
     grid-template-rows: auto 1fr auto;
     height: 100vh;
     gap: 20px;
 }
 
-.devices-header {
-    grid-area: header;
+.devices-header,
+.devices-footer {
     background-color: #007bff;
     color: white;
-    padding: 20px;
     text-align: center;
+    padding: 20px;
+}
+
+.devices-header {
+    grid-area: header;
+}
+
+.devices-footer {
+    grid-area: footer;
+    padding: 10px;
 }
 
 .devices-sidebar {
@@ -72,18 +80,11 @@ table tr:nth-child(even) {
 
 td button {
     width: 40%;
-    display: inline;
-    justify-content: center;
-    box-sizing: border-box;
     margin-bottom: 10px;
 }
 
 .device-form {
     margin-bottom: 20px;
-}
-
-.form-group {
-    margin-bottom: 10px;
 }
 
 .form-group label {
@@ -101,7 +102,8 @@ td button {
     border-radius: 4px;
 }
 
-.btn {
+.btn,
+.btn-add {
     padding: 10px 20px;
     background-color: #007bff;
     color: white;
@@ -110,8 +112,15 @@ td button {
     margin-top: 10px;
 }
 
-.btn:hover {
+.btn:hover,
+.btn-add:hover {
     background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #ccc;
+    color: black;
+    margin-left: 10px;
 }
 
 .sidebar-buttons {
@@ -121,12 +130,47 @@ td button {
     gap: 10px;
 }
 
-.sidebar-buttons button {
-    padding: 10px 15px;
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination-controls button {
+    margin: 0 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
     border: none;
     border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
+}
+
+.pagination-controls button[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.pagination-controls span {
+    margin: 0 10px;
+}
+
+.pagination-controls select {
+    margin-left: 10px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.status-active {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.status-inactive {
+    color: #dc3545;
+    font-weight: bold;
 }
 
 @media (max-width: 600px) {
@@ -157,13 +201,9 @@ td button {
         box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
     }
 
-    .sidebar-buttons {
+    .sidebar-buttons button,
+    td button {
         width: 100%;
-    }
-
-    .sidebar-buttons button {
-        width: 100%;
-        text-align: center;
     }
 
     .devices-header {
@@ -174,6 +214,7 @@ td button {
     .devices-sidebar {
         padding: 15px;
         text-align: center;
+        display: none;
     }
 
     .devices-main {
@@ -181,15 +222,7 @@ td button {
     }
 
     .form-group input,
-    .form-group select {
-        padding: 5px;
-        font-size: 12px;
-    }
-
-    .devices-sidebar {
-        display: none;
-    }
-
+    .form-group select,
     table th,
     table td {
         padding: 5px;
@@ -198,14 +231,6 @@ td button {
 
     .btn {
         padding: 5px 10px;
-    }
-
-    td button {
-        width: 100%;
-        display: inline;
-        justify-content: center;
-        box-sizing: border-box;
-        margin-bottom: 10px;
     }
 }
 
@@ -234,14 +259,10 @@ td button {
     }
 
     table th,
-    table td {
-        padding: 10px;
-        font-size: 14px;
-    }
-
+    table td,
     .form-group input,
     .form-group select {
-        padding: 7px;
+        padding: 10px;
         font-size: 14px;
     }
 
@@ -251,20 +272,7 @@ td button {
 
     td button {
         width: 100%;
-        display: inline;
-        justify-content: center;
-        box-sizing: border-box;
-        margin-bottom: 10px;
     }
-
-}
-
-.devices-footer {
-    grid-area: footer;
-    background-color: #007bff;
-    color: white;
-    text-align: center;
-    padding: 10px;
 }
 
 .modal {
@@ -304,88 +312,6 @@ td button {
     color: black;
 }
 
-.device-form {
-    margin-bottom: 20px;
-}
-
-.form-group {
-    margin-bottom: 10px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.form-group input,
-.form-group select {
-    width: 100%;
-    padding: 5px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.btn {
-    padding: 5% 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.btn:hover {
-    background-color: #0056b3;
-}
-
-.button-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.button-container .btn {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.button-container .btn:hover {
-    background-color: #0056b3;
-}
-
-.btn-secondary {
-    background-color: #ccc;
-    color: black;
-    margin-left: 10px;
-}
-
-.error {
-    color: red;
-    font-size: 12px;
-    margin-top: 5px;
-}
-
-.btn-add {
-    padding: 10px 20px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-.btn-add:hover {
-    background-color: #218838;
-}
-
 .btn-edit,
 .btn-delete {
     padding: 8px 16px;
@@ -415,51 +341,8 @@ td button {
     background-color: #c82333;
 }
 
-.status-active {
-    color: #28a745;
-    font-weight: bold;
-}
-
-.status-inactive {
-    color: #dc3545;
-    font-weight: bold;
-}
-
-.button-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.pagination-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.pagination-controls button {
-    margin: 0 10px;
-    padding: 5px 10px;
-    font-size: 14px;
-    cursor: pointer;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-}
-
-.pagination-controls button[disabled] {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
-
-.pagination-controls span {
-    margin: 0 10px;
-}
-
-.pagination-controls select {
-    margin-left: 10px;
-    padding: 5px;
-    font-size: 14px;
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
 }
